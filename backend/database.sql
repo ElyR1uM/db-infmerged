@@ -1,9 +1,3 @@
-CREATE TABLE `Material`(
-    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `Materialart_id` BIGINT UNSIGNED NOT NULL,
-    FOREIGN KEY (`Materialart_id`) REFERENCES `Materialart`(`id`)
-);
-
 CREATE TABLE `Materialart`(
     `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `ISBN` BIGINT UNSIGNED NOT NULL,
@@ -17,6 +11,13 @@ CREATE TABLE `Materialart`(
     `Ausleihbar` TINYINT(1) NOT NULL
 );
 
+CREATE TABLE `Material`(
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `Materialart_id` BIGINT UNSIGNED NOT NULL,
+    FOREIGN KEY (`Materialart_id`) REFERENCES `Materialart`(`id`)
+);
+
+
 CREATE TABLE `Lehrer`(
     `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `Nachname` VARCHAR(255) NOT NULL,
@@ -24,3 +25,5 @@ CREATE TABLE `Lehrer`(
     `ausgeliehenes_Material_id` BIGINT UNSIGNED,
     FOREIGN KEY (`ausgeliehenes_Material_id`) REFERENCES `Material`(`id`)
 );
+
+show tables;
