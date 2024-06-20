@@ -1,7 +1,14 @@
+#BBheader {
+    margin-bottom: 2%;
+}
+
 body {
     background-color: #282a36;
 }
 
+.categories {
+    display: flexbox;
+}
 .header {
     font-size: 72pt;
     font-family: sans-serif;
